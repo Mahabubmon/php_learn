@@ -12,12 +12,22 @@ foreach($file as $file){
 $folderPath1 = 'Decorator/';
 
 
-$files = glob($folderPath1 . '.php');
+$files1 = glob($folderPath1 . '.php');
 
 
 
-foreach($file as $file){
-    include $file;
+foreach($file1 as $file1){
+    include $file1;
+}
+$folderPath2 = 'Facade/';
+
+
+$files2 = glob($folderPath2 . '.php');
+
+
+
+foreach($file2 as $file2){
+    include $file2;
 }
 
 $u1 = new User();
@@ -50,6 +60,8 @@ $post    =  new Post();
 $comment = new Comment();
 $post->filter();
 $comment->filter();
+$fa = new Facade();
+$fa->findApartments("Lalbag, Dhaka","mapdiv");
 
 
 ?>
