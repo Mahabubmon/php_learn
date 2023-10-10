@@ -20,6 +20,19 @@ $db  = new Database();
                      $uploaded_image = "uploads/".$unique_image;
                      $folder = "uploads/";
 
+                     if(empty($file_name)){
+                       echo "<span class='error'>Please Select any Image!</span>";
+
+                        }elseif($file_size > 1048579){
+                        echo "<span class='error'>Image Size Should be less than 1MB</span>";
+
+                        }elseif(in_array($file_ext,$permited)== false){
+                            echo "<span class='error'>You Can upload only:-".implode(',', $permited)."</span>";
+
+                        }else{
+                            
+                        
+
                      move_uploaded_file($file_temp,$uploaded_image);
                      $query = "INSERT INTO tbl_image(image) VALUES('$uploaded_image')";
                      $inserted_rows = $db->insert($query);
@@ -29,6 +42,7 @@ $db  = new Database();
                         echo "<span class='Error'>Image Not Inserted .</span>";
 
                      }
+                    }
                 }
             ?>
            <form action="" method ="post" enctype="multipart/form-data">
