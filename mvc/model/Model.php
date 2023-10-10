@@ -1,9 +1,13 @@
 <?php 
+include 'DB.php';
 
 class Model{
 
-    function __construct(){
-        
+    public function getStudenData(){
+        $sql = 'SELECT * FROM tbl_student';
+        $stmt = DB::prepare($sql);
+        $stmt->execute();
+        $stmt->fetchAll();
     }
 }
 
