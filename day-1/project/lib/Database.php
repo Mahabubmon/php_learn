@@ -10,6 +10,7 @@
         public $link;
         public $error;
         function __construct(){
+            $this->connectDB();
 
         }
 
