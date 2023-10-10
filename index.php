@@ -64,4 +64,8 @@ $fa = new Facade();
 $fa->findApartments("Lalbag, Dhaka","mapdiv");
 
 
+$db = new Database();
+$db->setDriver("mysql");
+$db->connect("host","user","db","pass");
+
 ?>
