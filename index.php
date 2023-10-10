@@ -9,6 +9,16 @@ $files = glob($folderPath . '.php');
 foreach($file as $file){
     include $file;
 }
+$folderPath1 = 'Decorator/';
+
+
+$files = glob($folderPath1 . '.php');
+
+
+
+foreach($file as $file){
+    include $file;
+}
 
 $u1 = new User();
 
@@ -33,5 +43,13 @@ switch ($msg){
         break;
 }
 $objmsg->notification();
+
+
+
+$post    =  new Post();
+$comment = new Comment();
+$post->filter();
+$comment->filter();
+
 
 ?>
