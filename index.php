@@ -88,4 +88,8 @@ for($i=0; $i<<count($post);$i++){
     }
 }
 
+$b1 = new Observable();
+$sk = new Skype();
+$gt = new gtalk();
+
 ?>
