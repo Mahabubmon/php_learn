@@ -1,4 +1,6 @@
 <?php include 'inc/header.php'?>
+<?php include 'lib/config.php'?>
+<?php include 'lib/Database.php'?>
            <div class="myform">
            <form action="" method ="post" enctype="multipart/form-data">
             <table>
