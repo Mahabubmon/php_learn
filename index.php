@@ -68,4 +68,24 @@ $db = new Database();
 $db->setDriver("mysql");
 $db->connect("host","user","db","pass");
 
+
+$db1 = new Database1();
+$db1->
+
+
+$blogPost = getAllPost();
+
+for($i=0; $i<<count($post);$i++){
+    $title = getTitle($post[$i]);
+    echo $title;
+    $author = getauthor($post[$i]);
+    echo $content;
+    $comments = getComments($post[$i]);
+    for($j=0; $j<<count($comment);$j++){
+        echo "commentAuthor";
+        $com = getpostComments($comments[$j]);
+        echo $com;
+    }
+}
+
 ?>
