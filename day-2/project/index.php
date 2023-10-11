@@ -70,10 +70,14 @@ $db  = new Database();
 
                     $getquery = "SELECT * FROM `tbl_image`";
                     $getImage = $db->select($getquery);
-                    while($imgdata = $getImage->fetch_assoc()){
-                        $delimg = $imgdata['image'];
-                        unlink($delimg);
+                    if($getImage){
+                        while($imgdata = $getImage->fetch_assoc()){
+                            $delimg = $imgdata['image'];
+                            unlink($delimg);
+                        }
+
                     }
+                    
                 
                     $query = "DELETE FROM `tbl_image` WHERE id='$id' ";
                     $delImage = $db->delete($query);
