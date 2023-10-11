@@ -19,13 +19,14 @@
   <?php 
 
     $per_page = 3;
-    if(isset($_GET['page'])){
-      $page = $_GET['page'];
+    if(isset($_GET["page"])){
+      $page = $_GET[''];
     }else{
-      $page =1;
+      $page = 1;
     }
-    $start_form = ($page - 1) * $per_page;
 
+    $start_form = ($page-1) * $per_page;
+    
   
   ?>
 
@@ -54,9 +55,17 @@
      $query = "select * from tbl_post";
      $result = $db->select($query);
      $total_rows =mysqli_num_rows($result);
-     echo "<span class='pagination'><a href='index.php?page=1'>".'First Page'."</a>"?>
-     1, 2, 3
-     <?php  echo "<a href='index.php?page=10'>".'Last Page'."</a></span>"?>
+     $total_pages = cell($total_rows/$per_page);
+     echo "<span class='pagination'><a href='index.php?page=1'>".'First Page'."</a>";
+    
+     for($i=1; $i < $total_pages ; $i++){
+
+      echo "<a href='index.php?page=".$i."'>".$i."</a>";
+
+
+     }
+
+     echo "<a href='index.php?page=$total_pages'>".'Last Page'."</a></span>";?>
      <!-- pagination -->
     <?php 
     }else{
