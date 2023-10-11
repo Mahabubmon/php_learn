@@ -15,6 +15,22 @@
 <div class="contentsection contemplete clear">
   <div class="maincontent clear">
 
+  <!-- pagination -->
+  <?php 
+
+    $per_page = 3;
+    if(isset($_GET['page'])){
+      $page = $_GET['page'];
+    }else{
+      $page =1;
+    }
+
+  
+  ?>
+
+
+  <!-- pagination -->
+
   <?php 
     $query = "select * from tbl_post";
     $post =  $db->select($query);
@@ -31,6 +47,16 @@
       </div>
     </div>
      <?php }?><!-- end while -->
+
+     <!-- pagination -->
+     <?php 
+     $query = "select * from tbl_post";
+     $result = $db->select($query);
+     $total_rows =mysqli_num_rows($result);
+     echo "<span class='pagination'><a href='index.php?page=1'>".'First Page'."</a>"?>
+     1, 2, 3
+     <?php  echo "<a href='index.php?page=10'>".'Last Page'."</a></span>"?>
+     <!-- pagination -->
     <?php 
     }else{
       header("Location:404.php");
