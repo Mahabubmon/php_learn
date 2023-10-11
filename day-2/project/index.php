@@ -67,6 +67,13 @@ $db  = new Database();
                 <?php 
                 if(isset($_GET['del'])){
                     $id = $_GET['del'];
+
+                    $getquery = "SELECT * FROM `tbl_image`";
+                    $getImage = $db->select($getquery);
+                    while($imgdata = $getImage->fetch_assoc()){
+                        $delimg = $imgdata['image'];
+                        unlink($delimg);
+                    }
                 
                     $query = "DELETE FROM `tbl_image` WHERE id='$id' ";
                     $delImage = $db->delete($query);
