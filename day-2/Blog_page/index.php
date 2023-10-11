@@ -24,6 +24,7 @@
     }else{
       $page =1;
     }
+    $start_form = ($page - 1) * $per_page;
 
   
   ?>
@@ -32,7 +33,7 @@
   <!-- pagination -->
 
   <?php 
-    $query = "select * from tbl_post";
+    $query = "select * from tbl_post limit $start_form, $per_page";
     $post =  $db->select($query);
     if($post){
       while($result = $post->fetch_assoc()){
