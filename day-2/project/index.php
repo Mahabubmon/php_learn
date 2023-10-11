@@ -58,12 +58,26 @@ $db  = new Database();
             </table>
             
             
-              <table>
+              <table width="100%">
                 <tr>
-                    <th>NO.</th>
-                    <th>Image</th>
-                    <th>Action</th>
+                    <th width="25%">NO.</th>
+                    <th width="50%">Image</th>
+                    <th width="25%">Action</th>
                 </tr>
+                <?php 
+                if(isset($_GET['del'])){
+                    $id = $_GET['del'];
+                
+                    $query = "DELETE FROM `tbl_image` WHERE id='$id' ";
+                    $delImage = $db->delete($query);
+                    if($delImage){
+                        echo "<span class='success'>Image deleted Successfully.</span>";
+                     }else{
+                        echo "<span class='Error'>Image Not Deleted .</span>";
+
+                     }
+                    }
+                ?>
                 <?php 
                 $query ="SELECT *FROM tbl_image";
                 $getImage = $db->select($query);
@@ -75,7 +89,7 @@ $db  = new Database();
                 <tr>
                     <td><?php echo $i;?></td>
                     <td><img src="<?php echo $result['image'];?>" height="40px" width="50px"/></td>
-                    <td><a href="?=<?php echo $result['id'];?>">Delete</a></td>
+                    <td><a href="?del=<?php echo $result['id'];?>">Delete</a></td>
                 </tr>
                 <?php
              
