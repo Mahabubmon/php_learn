@@ -210,6 +210,9 @@ margin:200px 0;
   margin-bottom: 10px;
   text-align: justify;
 }
+#pagination{display: block; font-size: 20px; margin-top:10px; padding:10px;text-align: center;}
+#pagination a{}
+.pagination a:hover{}
 .notfound {
   min-height: 400px;
   padding-top: 100px;

@@ -20,7 +20,7 @@
 
     $per_page = 3;
     if(isset($_GET["page"])){
-      $page = $_GET[''];
+      $page = $_GET["page"];
     }else{
       $page = 1;
     }
@@ -55,8 +55,8 @@
      $query = "select * from tbl_post";
      $result = $db->select($query);
      $total_rows =mysqli_num_rows($result);
-     $total_pages = cell($total_rows/$per_page);
-     echo "<span class='pagination'><a href='index.php?page=1'>".'First Page'."</a>";
+     $total_pages = ceil($total_rows/$per_page);
+     echo "<span id='pagination' class='pagination'><a href='index.php?page=1'>".'First Page'."</a>";
     
      for($i=1; $i < $total_pages ; $i++){
 
