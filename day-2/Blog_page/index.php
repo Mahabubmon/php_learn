@@ -16,26 +16,22 @@
     $query = "select * from tbl_post";
     $post =  $db->select($query);
     if($post){
+      while($result = $post->assoc()){
+        
+      
 
     
   ?>
     <div class="samepost clear">
-      <h2><a href="">Our post title here</a></h2>
-      <h4>April 10, 2016, 12:30 PM, By <a href="#">Delowar</a></h4>
+      <h2><a href="post.php?id=<?php echo $result['id'];?>"><?php echo $result['title'];?></a></h2>
+      <h4><?php echo $result['date'];?> By <a href="#"><?php echo $result['author'];?></a></h4>
       <a href="#"><img src="images/post1.jpg" alt="post image" /></a>
-      <p>
-        Some text will be go here. Some text will be go here.Some text will be
-        go here.Some text will be go here.Some text will be go here.Some text
-        will be go here.Some text will be go here.Some text will be go here.Some
-        text will be go here.Some text will be go here. Some text will be go
-        here.Some text will be go here.Some text will be go here.Some text will
-        be go here.Some text will be go here.Some text will be go here.Some text
-        will be go here.Some text will be go here.
-      </p>
+      <?php echo $result['body'];?>
       <div class="readmore clear">
         <a href="post.php">Read More</a>
       </div>
     </div>
+     <?php }?><!-- end while -->
     <?php 
     }else{
       header("Location:404.php");
