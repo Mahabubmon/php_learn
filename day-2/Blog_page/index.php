@@ -17,7 +17,7 @@
         will be go here.Some text will be go here.
       </p>
       <div class="readmore clear">
-        <a href="post.html">Read More</a>
+        <a href="post.php">Read More</a>
       </div>
     </div>
     <div class="samepost clear">
@@ -34,7 +34,7 @@
         will be go here.Some text will be go here.
       </p>
       <div class="readmore clear">
-        <a href="post.html">Read More</a>
+        <a href="post.php">Read More</a>
       </div>
     </div>
     <div class="samepost clear">
@@ -51,11 +51,12 @@
         will be go here.Some text will be go here.
       </p>
       <div class="readmore clear">
-        <a href="post.html">Read More</a>
+        <a href="post.php">Read More</a>
       </div>
     </div>
   </div>
-  <?php include 'inc/sidebar.php';?>
-
-  <?php include 'inc/footer.php';?>
+  
 </div>
+<?php include 'inc/sidebar.php';?>
+
+<?php include 'inc/footer.php';?>
