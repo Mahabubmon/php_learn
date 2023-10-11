@@ -56,19 +56,34 @@ $db  = new Database();
                     <td><input type="submit" name="submit" value="Upload"></td>
                 </tr>
             </table>
-            <?php 
-                $query ="SELECT *FROM tbl_image order by id desc limit 1";
+            
+            
+              <table>
+                <tr>
+                    <th>NO.</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+                <?php 
+                $query ="SELECT *FROM tbl_image";
                 $getImage = $db->select($query);
                 if($getImage){
+                    $i=0;
                     while($result = $getImage->fetch_assoc()){
-            ?>
-            <img src="<?php echo $result['image'];?>" height="100px" width="200px"/>
-                        
-            <?php
+                     $i++;   
+                ?>
+                <tr>
+                    <td><?php echo $i;?></td>
+                    <td><img src="<?php echo $result['image'];?>" height="40px" width="50px"/></td>
+                    <td><a href="?=<?php echo $result['id'];?>">Delete</a></td>
+                </tr>
+                <?php
              
             }
                 }
             ?>
+              </table>          
+            
            </form>
            </div> 
            <?php include 'inc/footer.php'?>
