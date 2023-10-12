@@ -18,6 +18,19 @@
                 return false;
             }
         }
+
+        public static function checkSession(){
+            self::int();
+            if(self::get('login')== false){
+                self::destroy();
+                heaser("Location:login.php");
+
+            }
+        }
+        public static function  distroy(){
+            session_destroy();
+            header("Location:login.pgp");
+        }
     }
 
 ?>
