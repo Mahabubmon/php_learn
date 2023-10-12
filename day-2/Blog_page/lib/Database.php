@@ -36,7 +36,7 @@ Class Database{
 	public function insert($query){
 	$insert_row = $this->link->query($query) or die($this->link->error.__LINE__);
 	if($insert_row){
-		return $insert_rows;
+		return $insert_row;
 	} else {
 		return false;
 	}

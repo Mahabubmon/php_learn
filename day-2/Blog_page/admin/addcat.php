@@ -17,8 +17,10 @@
         $query = "INSERT INTO tbl_category(name) VALUES('$name')";
         $catinsert = $db->insert($query);
         if($catinsert){
-            echo "<span class = 'success'>Feild must not empty!</span>";
+            echo "<span class = 'success'>Category inserted successfully</span>";
 
+        }else{
+            echo "<span class = 'success'>Category not inserted successfully</span>";
         }
     }
 }			
