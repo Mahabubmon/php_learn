@@ -16,6 +16,10 @@
     }else{
         $query = "INSERT INTO tbl_category(name) VALUES('$name')";
         $catinsert = $db->insert($query);
+        if($catinsert){
+            echo "<span class = 'success'>Feild must not empty!</span>";
+
+        }
     }
 }			
         
