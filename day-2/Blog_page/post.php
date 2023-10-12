@@ -2,7 +2,7 @@
 
 
 <?php 
-if(!isset($_GET['id'])|| $_GET['id' == NULL]){
+if(!isset($_GET['id'])|| $_GET['id'] == NULL){
 	header("Location:404.php");
 }else{
 	$id = $_GET['id'];
