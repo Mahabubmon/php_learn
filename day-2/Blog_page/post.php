@@ -13,20 +13,16 @@ if(!isset($_GET['id'])|| $_GET['id' == NULL]){
 		<div class="maincontent clear">
 			<div class="about">
 				<?php 
-					$query = "select * from tbl_post where id='$id'";
+					$query = "SELECT * FROM tbl_post WHERE id='$id'";
 					$post =  $db->select($query);
     if($post){
       while($result = $post->fetch_assoc()){
 				?>
-				<h2>Our post title here</h2>
-				<h4>April 10, 2016, 12:30 PM, By Delowar</h4>
-				<a href="#"><img src="admin/upload/<?php echo $result['image'];?>" alt="post image" /></a>
-				<p>Our psot..Some text will be go here. Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here. Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.</p>
-				
-				<p>About me..Some text will be go here. Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here. Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.</p>
-
-				<p>About me..Some text will be go here. Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here. Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.Some text will be go here.</p>
-				<?php }}else{
+				<h2><?php echo $result['title'];?></h2>
+				<h4><?php echo $fm->formatDate($result['date']);?> By <a href="#"><?php echo $result['author'];?></a></h4>
+				<img src="admin/upload/<?php echo $result['image'];?>" alt="post image" />
+				<?php echo $result['body'];?>
+				<?php } }else{
 					header("Location:404.php");
 
 				}?>

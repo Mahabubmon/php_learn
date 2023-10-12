@@ -43,7 +43,7 @@
       <a href="#"><img src="admin/upload/<?php echo $result['image'];?>" alt="post image" /></a>
       <?php echo $fm->textShorten($result['body']);?>
       <div class="readmore clear">
-        <a href="post.php">Read More</a>
+        <a href="post.php?id=<?php echo $result['id'];?>">Read More</a>
       </div>
     </div>
      <?php }?><!-- end while -->
