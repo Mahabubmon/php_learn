@@ -22,7 +22,32 @@ Session::init();
 <body>
 <div class="container">
 	<section id="content">
-		<form action="" method="post">
+		<?php 
+		if($_SERVER['REQUSET_METHOD'] == 'POST'){
+			$username = $fm->validation($_POST['username']);
+			$password = $fm->validation(md5($_POST['password']));
+
+			$username = mysqli_real_escape_string($username);
+			$password = mysqli_real_escape_string($password);
+
+			$query = "SELECT * FROM tbl_user WHERE username = '$username' AND
+			password = '$password";
+			$result = $db->select($query);
+			if($result =!= false){
+				$value = mysqli_fetch-array($result);
+				$row = mysqli_num_rows($result);
+				if($row > 0){
+
+				}else{
+
+				}
+			}else{
+				echo "<span style='color:red;font-size:18px;'>Username or Pasword not matched</span>";
+			}
+
+		}
+		?>
+		<form action="login.php" method="post">
 			<h1>Admin Login</h1>
 			<div>
 				<input type="text" placeholder="Username" required="" name="username"/>
