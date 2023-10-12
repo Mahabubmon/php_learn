@@ -1,5 +1,4 @@
 <?php include 'inc/header.php';?>
-<?php include 'inc/slider.php';?>
 <?php 
 if(!isset($_GET['category'])|| $_GET['category'] == NULL){
 	header("Location:404.php");
