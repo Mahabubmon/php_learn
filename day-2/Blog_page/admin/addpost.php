@@ -23,20 +23,11 @@
                             </td>
                             <td>
                                 <select id="select" name="select">
+                                    <option value="">Select Category</option>
                                     <option value="1">Category One</option>
                                     <option value="2">Category Two</option>
                                     <option value="3">Cateogry Three</option>
                                 </select>
-                            </td>
-                        </tr>
-                   
-                    
-                        <tr>
-                            <td>
-                                <label>Date Picker</label>
-                            </td>
-                            <td>
-                                <input type="text" id="date-picker" />
                             </td>
                         </tr>
                         <tr>
