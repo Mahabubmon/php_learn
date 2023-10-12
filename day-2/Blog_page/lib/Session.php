@@ -21,15 +21,15 @@
 
         public static function checkSession(){
             self::int();
-            if(self::get('login')== false){
+            if(self::get("login")== false){
                 self::destroy();
-                heaser("Location:login.php");
+                header("Location:login.php");
 
             }
         }
-        public static function  distroy(){
+        public static function destroy(){
             session_destroy();
-            header("Location:login.pgp");
+            header("Location:login.php");
         }
     }
 
