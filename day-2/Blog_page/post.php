@@ -28,7 +28,7 @@ if(!isset($_GET['id'])|| $_GET['id' == NULL]){
 					<h2>Related articles</h2>
 					<?php 
 						$catid = $result['cat'];
-						$queryrelated = "SELECT * FROM tbl_post WHERE cat='$catid' limit 6";
+						$queryrelated = "SELECT * FROM tbl_post WHERE cat='$catid' order by rand() limit 6";
 						$relatedpost =  $db->select($queryrelated);
 						if($relatedpost){
 						while($rresult = $relatedpost->fetch_assoc()){
