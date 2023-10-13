@@ -2,8 +2,10 @@
 <?php include 'inc/sidebar.php'?>
 <?php 
   if(!isset($_GET['catid']) || $_GET['catid'] == NULL){
-    echo "<script> window.location = 'catlist.php'</script>"
+    echo "<script> window.location = 'catlist.php'</script>";
     //header("Location:catlist.php");
+  }else{
+    $id= $_GET['catid'];
   }  
 ?>
 <div class="grid_10">
@@ -31,6 +33,14 @@
 }			
         
         ?> 
+
+        <?php 
+        $query= "SELECT * FROM tbl_category WHERE id='$id' order by id desc"; 
+        $category = $db->select($query);
+        while($result = $category->fetch_assoc()){
+
+        
+        ?>
         <form action="" method="post">
         <table class="form">					
             <tr>
@@ -45,6 +55,7 @@
             </tr>
         </table>
         </form>
+        <?php }?>
     </div>
 </div>
 </div>
