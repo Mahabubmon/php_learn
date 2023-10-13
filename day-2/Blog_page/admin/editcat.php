@@ -1,7 +1,12 @@
 <?php include 'inc/header.php'?>
 <?php include 'inc/sidebar.php'?>
+<?php 
+  if(!isset($_GET['catid']) || $_GET['catid'] == NULL){
+    echo "<script> window.location = 'catlist.php'</script>"
+    //header("Location:catlist.php");
+  }  
+?>
 <div class="grid_10">
-
 <div class="box round first grid">
     <h2>Add New Category</h2>
     <div class="block copyblock">
@@ -14,8 +19,8 @@
         echo "<span class = 'error'>Feild must not empty!</span>";
 
     }else{
-        $query = "INSERT INTO tbl_category(name) VALUES('$name')";
-        $catinsert = $db->insert($query);
+        $query = "";
+        $catinsert = $db->update($query);
         if($catinsert){
             echo "<span class = 'success'>Category inserted successfully</span>";
 
