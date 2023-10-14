@@ -7,7 +7,13 @@
 if(isset($_GET['delcat'])){
 	$delid = $_GET['delcat'];
 	$delquery = "DELETE FROM tbl_category WHERE id='$delid'";
-	
+	$deldata = $db->delete($delquery);
+	if($deldata){
+		echo "<span class = 'success'>Category Deleted successfully</span>";
+
+	}else{
+		echo "<span class = 'error'>Category not deleted</span>";
+	}
 }
 ?>
 <div class="block">  
