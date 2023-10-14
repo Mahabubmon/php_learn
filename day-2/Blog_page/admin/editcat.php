@@ -21,13 +21,13 @@
         echo "<span class = 'error'>Feild must not empty!</span>";
 
     }else{
-        $query = "";
-        $catinsert = $db->update($query);
-        if($catinsert){
-            echo "<span class = 'success'>Category inserted successfully</span>";
+        $query = "UPDATE tbl_category SET name='$name' WHERE id = '$id' ";
+        $update_row = $db->update($query);
+        if($update_row){
+            echo "<span class = 'success'>Category Update successfully</span>";
 
         }else{
-            echo "<span class = 'success'>Category not inserted successfully</span>";
+            echo "<span class = 'success'>Category not Updated</span>";
         }
     }
 }			
@@ -45,7 +45,7 @@
         <table class="form">					
             <tr>
                 <td>
-                    <input type="text" name="name" placeholder="Enter Category Name..." class="medium" />
+                    <input type="text" name="name" Value="<?php echo $result['name']; ?>" class="medium" />
                 </td>
             </tr>
             <tr> 
