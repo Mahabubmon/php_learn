@@ -7,19 +7,34 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Post Title</th>
-							<th>Description</th>
-							<th>Category</th>
-							<th>Image</th>
-							<th>Action</th>
+							<th width="5%">Post Title</th>
+							<th width="5%">Description</th>
+							<th width="5%">Category</th>
+							<th width="5%">Image</th>
+							<th width="5%">Author</th>
+							<th width="5%">Tags</th>
+							<th width="5%">Action</th>
 						</tr>
 					</thead>
+					<?php 
+						$query = "SELECT  tbl_post.*, tbl_category.name FROM tbl_post
+						INNER JOIN tbl_category
+						ON tbl_post.cat = tbl_category.id 
+						ORDER By tbl_post.title DESC";
+						$post = $db->select($query);
+						
+					?>
 					<tbody>
 						<tr class="odd gradeX">
 							<td>Trident</td>
 							<td>Internet Explorer 4.0</td>
 							<td>Win 95+</td>
-							<td class="center"> 4</td>
+							<td > 4</td>
+							<td > 4</td>
+							<td > 4</td>
+							<td > 4</td>
+							<td > 4</td>
+							<td > 4</td>
 							<td><a href="">Edit</a> || <a href="">Delete</a></td>
 						</tr>
 						
