@@ -22,6 +22,10 @@
 						ON tbl_post.cat = tbl_category.id 
 						ORDER By tbl_post.title DESC";
 						$post = $db->select($query);
+						if($post){
+							$i=0;
+							while($result = $post->fetch_assoc()){
+								$i++;
 						
 					?>
 					<tbody>
@@ -37,7 +41,9 @@
 							<td > 4</td>
 							<td><a href="">Edit</a> || <a href="">Delete</a></td>
 						</tr>
-						
+						<?php 	}
+						}
+							?>
 					</tbody>
 				</table>
 	
