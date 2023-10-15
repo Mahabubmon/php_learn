@@ -28,9 +28,10 @@ if(!isset($_GET['category'])|| $_GET['category'] == NULL){
 </div>
 <?php 
     } 
-        }else{
-				header("Location:404.php");
-
+        }else{?>
+				
+<h3>No post Available in this category</h3>
+            <?php
             }
 ?>
 
