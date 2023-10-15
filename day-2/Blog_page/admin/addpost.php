@@ -33,13 +33,14 @@
                         .implode(', ', $permited)."</span>";
                        } else{
                             move_uploaded_file($file_temp, $uploaded_image);
-                            $query = "INSERT INTO tbl_image(image) VALUES('$uploaded_image')";
+                            $query = "INSERT INTO tbl_post(cat,title,body,image,author,tags) 
+                            VALUES('$cat','$title','$body','$uploaded_image','$author','$tags')";
                             $inserted_rows = $db->insert($query);
                             if ($inserted_rows) {
-                                echo "<span class='success'>Image Inserted Successfully.
+                                echo "<span class='success'>Post Inserted Successfully.
                                 </span>";
                             }else {
-                                echo "<span class='error'>Image Not Inserted !</span>";
+                                echo "<span class='error'>Post Not Inserted !</span>";
                             }
                          }
                     }
