@@ -41,7 +41,7 @@ if(isset($_GET['delcat'])){
 			<td><?php echo $i;?></td>
 			<td><?php echo $result['name'];?></td>
 			<td><a href="editcat.php?catid=<?php echo $result['id'];?>">
-			Edit</a> || <a onclick="return confirm('Are you sure to Delete!');" href="editcat.php?delcat=<?php echo $result['id'];?>">
+			Edit</a> || <a onclick="return confirm('Are you sure to Delete!');" href="?delcat=<?php echo $result['id'];?>">
 			Delete</a></td>
 		</tr>
 
