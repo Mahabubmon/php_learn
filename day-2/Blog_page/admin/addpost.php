@@ -11,7 +11,17 @@
                         $body = mysqli_real_escape_string($db->link,$_POST['body']);
                         $tags = mysqli_real_escape_string($db->link,$_POST['tags']);
                         $author = mysqli_real_escape_string($db->link,$_POST['author']);
+                        
                        
+                         $permited  = array('jpg', 'jpeg', 'png', 'gif');
+                         $file_name = $_FILES['image']['name'];
+                         $file_size = $_FILES['image']['size'];
+                         $file_temp = $_FILES['image']['tmp_name'];
+                     
+                         $div = explode('.', $file_name);
+                         $file_ext = strtolower(end($div));
+                         $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+                         $uploaded_image = "uploads/".$unique_image;
                     }
                 ?>
                 <div class="block">               
