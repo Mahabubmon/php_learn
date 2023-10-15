@@ -6,11 +6,16 @@
                 <h2>Add New Post</h2>
                 <?php 
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                        $name = mysqli_real_escape_string($db->link,$_POST['name']);
-                
+                        $title = mysqli_real_escape_string($db->link,$_POST['title']);
+                        $cat = mysqli_real_escape_string($db->link,$_POST['cat']);
+                        $body = mysqli_real_escape_string($db->link,$_POST['body']);
+                        $tags = mysqli_real_escape_string($db->link,$_POST['tags']);
+                        $author = mysqli_real_escape_string($db->link,$_POST['author']);
+                       
+                    }
                 ?>
                 <div class="block">               
-                 <form action="" method="" enctype="multipart/form-data">
+                 <form action="addpost" method="post" enctype="multipart/form-data">
                     <table class="form">
                        
                         <tr>
