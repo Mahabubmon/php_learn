@@ -30,15 +30,15 @@
 					?>
 					<tbody>
 						<tr class="odd gradeX">
-							<td>Trident</td>
-							<td>Internet Explorer 4.0</td>
-							<td>Win 95+</td>
-							<td > 4</td>
-							<td > 4</td>
-							<td > 4</td>
-							<td > 4</td>
-							<td > 4</td>
-							<td > 4</td>
+							<td><?php echo $i;?></td>
+							<td><?php echo $result['title'];?></td>
+							<td><?php echo $fm->textShorten($result['body'], 100);?></td>
+							<td ><?php echo $result['name'];?></td>
+							<td ><img src="<?php echo $result['image'];?>" height="40px" width="60px" alt=""></td>
+							<td ><?php echo $result['author'];?></td>
+							<td ><?php echo $result['tags'];?></td>
+							<td ><?php echo $fm->formatDate($result['date'] );?></td>
+							
 							<td><a href="">Edit</a> || <a href="">Delete</a></td>
 						</tr>
 						<?php 	}
