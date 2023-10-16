@@ -39,7 +39,8 @@
 							<td ><?php echo $result['tags'];?></td>
 							<td ><?php echo $fm->formatDate($result['date'] );?></td>
 							
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
+							<td><a href="editpost.php?editpostid=<?php echo $result['id'];?>">Edit</a> || 
+							<a href="deletepost.php?delid=<?php echo $result['id'];?>">Delete</a></td>
 						</tr>
 						<?php 	}
 						}
