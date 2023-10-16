@@ -101,6 +101,7 @@
                                 <label>Upload Image</label>
                             </td>
                             <td>
+                                <img src="<?php echo $postresult['image'];?>" height="80px" width="200px" >
                                 <input type="file"  name="image"/>
                             </td>
                         </tr>
@@ -109,7 +110,9 @@
                                 <label>Content</label>
                             </td>
                             <td>
-                                <textarea class="tinymce" name ="body"></textarea>
+                                <textarea class="tinymce" name ="body">
+                                <?php echo $postresult['body'];?>  
+                                </textarea>
                             </td>
                         </tr>
                         <tr>
@@ -125,7 +128,7 @@
                                 <label>Author</label>
                             </td>
                             <td>
-                                <input type="text" name ="author" placeholder="Enter Post Title..." class="medium" />
+                                <input type="text" name ="author" value="<?php echo $postresult['author'];?>" class="medium" />
                             </td>
                         </tr>
 						<tr>
