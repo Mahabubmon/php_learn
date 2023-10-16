@@ -57,7 +57,7 @@
                     <?php 
                     $query = "SELECT * FROM tbl_post WHERE id='$postid' ORDER by desc" ;
                     $getpost = $db->select($query);
-                    while($result = $getpost->fetch_assoc()){
+                    while($postresult = $getpost->fetch_assoc()){
 
                  
                     ?>              
@@ -69,7 +69,7 @@
                                 <label>Title</label>
                             </td>
                             <td>
-                                <input type="text" name ="title" placeholder="Enter Post Title..." class="medium" />
+                                <input type="text" name ="title" value ="<?php echo $postresult['title'];?>" class="medium" />
                             </td>
                         </tr>
                      
@@ -117,7 +117,7 @@
                                 <label>Tags</label>
                             </td>
                             <td>
-                                <input type="text" name ="tags" placeholder="Enter Tags..." class="medium" />
+                                <input type="text" name ="tags" value="<?php echo $postresult['title'];?>" class="medium" />
                             </td>
                         </tr>
                         <tr>
@@ -135,8 +135,9 @@
                             </td>
                         </tr>
                     </table>
-                    <?php    } ?>
+                    
                     </form>
+                    <?php    } ?>
                 </div>
             </div>
         </div>
