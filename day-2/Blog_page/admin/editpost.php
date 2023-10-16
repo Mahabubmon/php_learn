@@ -117,7 +117,7 @@
                                 <label>Tags</label>
                             </td>
                             <td>
-                                <input type="text" name ="tags" value="<?php echo $postresult['title'];?>" class="medium" />
+                                <input type="text" name ="tags" value="<?php echo $postresult['tags'];?>" class="medium" />
                             </td>
                         </tr>
                         <tr>
