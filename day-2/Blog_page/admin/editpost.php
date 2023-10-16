@@ -55,7 +55,11 @@
                 ?>
                 <div class="block"> 
                     <?php 
-                    $query = "SELECT * FROM tbl_post WHERE id='$postid' ORDER by desc" ; 
+                    $query = "SELECT * FROM tbl_post WHERE id='$postid' ORDER by desc" ;
+                    $getpost = $db->select($query);
+                    while($result = $getpost->fetch_assoc()){
+
+                 
                     ?>              
                  <form action="addpost" method="post" enctype="multipart/form-data">
                     <table class="form">
@@ -131,6 +135,7 @@
                             </td>
                         </tr>
                     </table>
+                    <?php    } ?>
                     </form>
                 </div>
             </div>
