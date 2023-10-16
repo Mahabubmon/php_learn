@@ -1,9 +1,17 @@
 <?php include 'inc/header.php'?>
 <?php include 'inc/sidebar.php'?>
+<?php 
+  if(!isset($_GET['editpostid']) || $_GET['editpostid'] == NULL){
+    echo "<script> window.location = 'catlist.php'</script>";
+    //header("Location:catlist.php");
+  }else{
+    $postid= $_GET['editpostid'];
+  }  
+?>
         <div class="grid_10">
 		
             <div class="box round first grid">
-                <h2>Add New Post</h2>
+                <h2>update Post</h2>
                 <?php 
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         $title = mysqli_real_escape_string($db->link,$_POST['title']);
@@ -45,7 +53,10 @@
                          }
                     }
                 ?>
-                <div class="block">               
+                <div class="block"> 
+                    <?php 
+                    $query = "SELECT * FROM tbl_post WHERE id='$postid' ORDER by desc" ; 
+                    ?>              
                  <form action="addpost" method="post" enctype="multipart/form-data">
                     <table class="form">
                        
