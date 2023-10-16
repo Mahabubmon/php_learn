@@ -1,9 +1,9 @@
 <?php include 'inc/header.php'?>
 <?php include 'inc/sidebar.php'?>
 <?php 
-  if(!isset($_GET['catid']) || $_GET['catid'] == NULL){
-    echo "<script> window.location = 'catlist.php'</script>";
-    //header("Location:catlist.php");
+  if(!isset($_GET['editpostid']) || $_GET['editpostid'] == NULL){
+    echo "<script> window.location = 'postlist.php'</script>";
+    
   }else{
     $id= $_GET['catid'];
   }  

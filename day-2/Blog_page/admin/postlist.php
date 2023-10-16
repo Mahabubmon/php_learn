@@ -31,7 +31,7 @@
 		<tbody>
 			<tr class="odd gradeX">
 				<td><?php echo $i;?></td>
-				<td><?php echo $result['title'];?></td>
+				<td><a href="editpost.php?editpostid=<?php echo $result['id'];?>"></a><?php echo $result['title'];?></td>
 				<td><?php echo $fm->textShorten($result['body'], 100);?></td>
 				<td ><?php echo $result['name'];?></td>
 				<td ><img src="<?php echo $result['image'];?>" height="40px" width="60px" alt=""></td>
@@ -39,9 +39,10 @@
 				<td ><?php echo $result['tags'];?></td>
 				<td ><?php echo $fm->formatDate($result['date'] );?></td>
 				
-				<td><a href="editpost.php?editpostid=<?php echo $result['id'];?>">Edit</a> ||
+				<td><a href="editpost.php?editpostid=<?php echo $result['id'];?>">Edit</a> 
+				||
 				<a onclick="return confirm('Are you sure to Delete!');" 
-				 href="deletepost.php?delid=<?php echo $result['id'];?>">Delete</a></td>
+				 href="deletepost.php?delid=<?php echo $result['id'];?>">Delete</></td>
 			</tr>
 			<?php 	}
 			}
