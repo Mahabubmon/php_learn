@@ -5,7 +5,7 @@ class River
 
 
 
-    public function __construct()
+    public function __construct($padma)
     {
         $this->padma = $padma;
     }
@@ -23,8 +23,8 @@ $identifyRiver = new River("haveilsha");
 
 $flow = new Flow("SoHigh");
 
-$identifyRiver->place();
 $flow->place();
+
 
 
 
