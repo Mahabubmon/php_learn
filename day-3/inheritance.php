@@ -2,7 +2,6 @@
 class River
 {
     public $padma;
-    public $meghna;
 
 
 
@@ -20,7 +19,13 @@ class Flow extends River
     }
 }
 
-$identifyRiver = new River();
+$identifyRiver = new River("haveilsha");
+
+$flow = new Flow("SoHigh");
+
+$identifyRiver->place();
+$flow->place();
+
 
 
 ?>
